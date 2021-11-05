@@ -1,7 +1,7 @@
 const db = require('../../data/dbConfig');
 
 function getRecources() {
-        return db('resources')
+    return db('resources')
 }
 
 async function postRecource(resource) {
@@ -13,3 +13,4 @@ module.exports = {
     getRecources,
     postRecource,
 }
+

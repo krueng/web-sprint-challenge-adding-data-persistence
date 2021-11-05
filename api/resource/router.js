@@ -12,11 +12,23 @@ router.get('/resources', (req, res, next) => {
 });
 
 router.post('/resources', (req, res, next) => {
-    helpers.postRecource(req.body)
-        .then(resource => {
-            res.status(201).json(resource)
+    const { resource_name } = req.body
+
+    if (
+        typeof resource_name !== 'string' ||
+        !resource_name.trim().length
+    ) {
+        next({
+            message: 'resource name is required'
         })
-        .catch(next)
+    } else {
+        helpers.postRecource(req.body)
+            .then(resource => {
+                res.status(201).json(resource)
+            })
+            .catch(next)
+    }
+
 })
 
 module.exports = router

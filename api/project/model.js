@@ -23,5 +23,6 @@ async function postProject(project) {
 
 module.exports = {
     getProjects,
+    getProjectById,
     postProject,
 }

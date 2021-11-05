@@ -1,4 +1,3 @@
-
 exports.up = function (knex) {
     return knex.schema
         .createTable('projects', table => {
@@ -43,7 +42,7 @@ exports.up = function (knex) {
                 .onUpdate('RESTRICT')
     })
   
-};
+}
 
 exports.down = function(knex) {
     return knex.schema

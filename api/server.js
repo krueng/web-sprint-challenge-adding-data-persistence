@@ -2,7 +2,7 @@ const express = require('express')
 const helmet = require('helmet')
 const resourceRouter = require('./resource/router')
 const projectRouter = require('./project/router')
-// const taskRouter = require('./task/router')
+const taskRouter = require('./task/router')
 
 const server = express()
 
@@ -11,7 +11,7 @@ server.use(express.json())
 
 server.use('/api', resourceRouter)
 server.use('/api', projectRouter)
-// server.use('/api', taskRouter)
+server.use('/api', taskRouter)
 
 server.get('/', (req, res) => {
     res.send(`<h2>This is Sprint Challenge!</h2>`)

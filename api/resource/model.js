@@ -13,4 +13,3 @@ module.exports = {
     getRecources,
     postRecource,
 }
-

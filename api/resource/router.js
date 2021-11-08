@@ -3,7 +3,7 @@ const helpers = require('./model')
 
 const router = express.Router()
 
-router.get('/resources', (req, res, next) => {
+router.get('/', (req, res, next) => {
     helpers.getRecources()
         .then(recources => {
             res.status(200).json(recources)
@@ -11,7 +11,7 @@ router.get('/resources', (req, res, next) => {
         .catch(next)
 });
 
-router.post('/resources', (req, res, next) => {
+router.post('/', (req, res, next) => {
     const { resource_name } = req.body
 
     if (

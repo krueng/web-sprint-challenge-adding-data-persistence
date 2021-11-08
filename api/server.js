@@ -9,9 +9,9 @@ const server = express()
 server.use(helmet())
 server.use(express.json())
 
-server.use('/api', resourceRouter)
-server.use('/api', projectRouter)
-server.use('/api', taskRouter)
+server.use('/api/resources', resourceRouter)
+server.use('/api/projects', projectRouter)
+server.use('/api/tasks', taskRouter)
 
 server.get('/', (req, res) => {
     res.send(`<h2>This is Sprint Challenge!</h2>`)

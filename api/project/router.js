@@ -3,7 +3,7 @@ const helpers = require('./model')
 
 const router = express.Router()
 
-router.get('/projects', (req, res, next) => {
+router.get('/', (req, res, next) => {
     helpers.getProjects()
         .then(projects => {
             res.status(200).json(projects)
@@ -11,7 +11,7 @@ router.get('/projects', (req, res, next) => {
         .catch(next)
 })
 
-router.post('/projects', (req, res, next) => {
+router.post('/', (req, res, next) => {
     const { project_name } = req.body
 
     if (
